@@ -3,7 +3,7 @@ import "./App.css";
 import { convertMilliseconds } from "./tools";
 import { useTimer } from "./useTimer";
 
-const storageKey = (s: string) => `10-hours-${s}`;
+const storageKey = (s: string) => `10-hours/${s}`;
 const timeLeft = 36000000;
 
 function formatCountdown(ms: number) {
