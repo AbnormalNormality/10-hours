@@ -3,8 +3,8 @@ import "./App.css";
 import { convertMilliseconds } from "./tools";
 import { useTimer } from "./useTimer";
 
-const storageKey = "10-hours-remaining";
-const timeLeft = 10 * 60 * 60 * 1000;
+const storageKey = (s: string) => `10-hours-${s}`;
+const timeLeft = 36000000;
 
 function formatCountdown(ms: number) {
   const { hours, minutes, seconds } = convertMilliseconds(ms);
@@ -20,13 +20,13 @@ function formatTitle(ms: number) {
 
 function App() {
   const [timer, setTimer] = useTimer(() => {
-    const stored = localStorage.getItem(storageKey);
+    const stored = localStorage.getItem(storageKey("remaining"));
     return stored && !isNaN(Number(stored)) ? Number(stored) : timeLeft;
   });
 
   useEffect(() => {
     document.title = `${timer ? formatTitle(timer) : "Rejoice"}`;
-    localStorage.setItem(storageKey, String(timer));
+    localStorage.setItem(storageKey("remaining"), String(timer));
   }, [timer]);
 
   return (
