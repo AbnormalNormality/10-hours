@@ -1,0 +1,10 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --colour-background: #ffffff;
+    --colour-text: #213547;
+    --colour-link-hover: #747bff;
+    --colour-button: #f9f9f9;
+
+    color-scheme: light;
+  }
+}

@@ -1,0 +1,8 @@
+:root {
+  --colour-background: #242424;
+  --colour-text: rgba(255, 255, 255, 0.87);
+  --colour-link-hover: #535bf2;
+  --colour-button: #1a1a1a;
+
+  color-scheme: dark;
+}
